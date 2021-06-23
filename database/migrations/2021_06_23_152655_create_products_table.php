@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('status');
             $table->tinyInteger('featured');
             $table->string('ratings')->nullable();
-            $table->foreignId('shop_id')->constrained('shops')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('shop_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

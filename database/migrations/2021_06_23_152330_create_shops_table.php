@@ -17,7 +17,7 @@ class CreateShopsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description')->nullable();
-            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ class CreateAddressesTable extends Migration
             $table->string('state')->nullable();
             $table->string('full_address')->nullable();
             $table->string('mobile')->nullable();
-            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

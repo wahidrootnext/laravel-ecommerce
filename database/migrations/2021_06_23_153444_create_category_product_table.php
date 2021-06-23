@@ -14,10 +14,10 @@ class CreateCategoryProductTable extends Migration
     public function up()
     {
         Schema::create('category_product', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('category_id')->constrained('categories')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('product_id')->constrained('products')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->primary(['category_id', 'product_id']);
         });
     }
 

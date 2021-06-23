@@ -17,9 +17,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
+        'email_verified_at',
         'password',
+        'address',
+        'city',
+        'country',
+        'remember_token',
     ];
 
     /**
@@ -40,4 +46,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the addresses for the user.
+     */
+    public function addresses() {
+        return $this->hasMany(Address::class);
+    }
+
+    /**
+     * Get the shop associated with the user.
+     */
+    public function shop() {
+        return $this->hasOne(Shop::class);
+    }
+
+    /**
+     * Get the orders for the user.
+     */
+    public function orders() {
+        return $this->hasMany(Orders::class);
+    }
 }
