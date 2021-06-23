@@ -15,6 +15,11 @@ class CreateAttributeProductTable extends Migration
     {
         Schema::create('attribute_product', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('attribute_id')->constrained('attributes')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('value');
+            $table->integer('quantity');
+            $table->decimal('price', 8, 2)->nullable();
+            $table->foreignId('product_id')->constrained('products')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateAttributesTable extends Migration
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('name');
+            $table->enum('frontend_type', ['Simple Product', 'Virtual Product', 'Downloadable Product', 'Grouped Product', 'External/Affiliate Product', 'Variable Product']);
+            $table->tinyInteger('is_filterable');
+            $table->tinyInteger('is_required');
             $table->timestamps();
         });
     }
