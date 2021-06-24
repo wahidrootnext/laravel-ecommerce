@@ -22,11 +22,11 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('quantity');
             $table->decimal('weight', 8, 2)->nullable();
-            $table->decimal('price', 8, 2)->nullable();
+            $table->decimal('price', 8, 2);
             $table->decimal('sale_price', 8, 2)->nullable();
             $table->tinyInteger('status');
             $table->tinyInteger('featured');
-            $table->string('ratings')->nullable();
+            $table->integer('ratings')->nullable();
             $table->foreignId('shop_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

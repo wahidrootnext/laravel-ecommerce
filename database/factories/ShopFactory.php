@@ -22,7 +22,8 @@ class ShopFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'      => $this->faker->company(),
+            'user_id'   => $this->faker->unique()->randomDigitNotZero(),
         ];
     }
 }

@@ -22,7 +22,8 @@ class ProductImageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'product_id'    => $this->faker->unique()->numberBetween(0, 51),
+            'full'          => $this->faker->imageUrl()
         ];
     }
 }
