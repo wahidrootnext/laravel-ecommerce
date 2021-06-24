@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use HasFactory;
+    use SoftDeletes, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -40,14 +41,16 @@ class Order extends Model
     /**
      * Get the user that owns the order.
      */
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
     /**
      * The products that belong to the order.
      */
-    public function products() {
+    public function products()
+    {
         return $this->belongsToMany(Product::class)->withTimestamps()->withPivot(['quantity', 'price']);
     }
 }

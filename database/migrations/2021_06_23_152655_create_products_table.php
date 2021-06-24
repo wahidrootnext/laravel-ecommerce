@@ -29,6 +29,7 @@ class CreateProductsTable extends Migration
             $table->integer('ratings')->nullable();
             $table->foreignId('shop_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

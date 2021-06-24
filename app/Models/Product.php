@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory;
+    use SoftDeletes, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -33,36 +34,40 @@ class Product extends Model
     /**
      * Get the shop that owns the product.
      */
-    public function shop() {
+    public function shop()
+    {
         return $this->belongsTo(Shop::class);
     }
 
     /**
      * Get the images for the product.
      */
-    public function productImages() {
+    public function productImages()
+    {
         return $this->hasMany(ProductImage::class);
     }
 
     /**
      * The orders that belong to the product.
      */
-    public function orders() {
+    public function orders()
+    {
         return $this->belongsToMany(Order::class)->withTimestamps()->withPivot(['quantity', 'price']);
     }
 
     /**
      * The categories that belong to the product.
      */
-    public function categories() {
+    public function categories()
+    {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
     /**
      * The attributes that belong to the product.
      */
-    public function attributes() {
+    public function attributes()
+    {
         return $this->belongsToMany(Attribute::class)->withTimestamps()->withPivot(['value', 'quantity', 'price']);
     }
-
 }

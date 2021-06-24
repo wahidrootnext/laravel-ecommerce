@@ -36,6 +36,7 @@ class CreateOrdersTable extends Migration
             $table->string('billing_zip_code')->nullable();
             $table->string('billing_phone')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
