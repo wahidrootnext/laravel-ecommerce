@@ -1,8 +1,8 @@
 <template>
-    This is Home
+    This is home
 </template>
 <script>
     export default {
-        name: "Home"
+        name: "Home",
     }
 </script>

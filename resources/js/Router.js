@@ -7,6 +7,7 @@ import Dashboard from './Pages/Dashboard.vue';
 
 const Router = createRouter({
     history: createWebHistory(),
+    linkActiveClass: "active",
     routes: [
         { path: '/', name: 'home', component: Home },
         { path: '/login', name: 'login', component: Login },

@@ -1,5 +1,5 @@
 <template>
-    This is Dashboard
+    Welcome to the Dashboard
 </template>
 <script>
     export default {
