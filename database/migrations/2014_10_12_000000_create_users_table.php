@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('mobile')->unique()->nullable();
             $table->string('last_login_ip')->nullable();
-            $table->string('last_login_time')->nullable();
+            $table->timestamp('last_login_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

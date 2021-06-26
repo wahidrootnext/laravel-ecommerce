@@ -24,10 +24,12 @@ class CategoryFactory extends Factory
     {
         $category = $this->faker->unique()->randomElement(["Fashion", "Toy, Hobby & DIY", "Electronics & Media", "Food & Personal Care", "Furniture & Appliances"]);
         return [
-            'name'      => $category,
-            'slug'      => Str::slug($category),
-            'featured'  => $this->faker->boolean(),
-            'menu'      => 0,
+            'name'          => $category,
+            'slug'          => Str::slug($category),
+            'description'   => $this->faker->text(200),
+            'parent_id'     => 0,
+            'featured'      => $this->faker->boolean(),
+            'image'         => $this->faker->imageUrl(300, 300),
         ];
     }
 }

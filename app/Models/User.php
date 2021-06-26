@@ -24,7 +24,7 @@ class User extends Authenticatable
         'password',
         'mobile',
         'last_login_ip',
-        'last_login_time',
+        'last_login_at',
         'remember_token',
     ];
 
