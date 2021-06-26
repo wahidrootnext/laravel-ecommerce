@@ -22,9 +22,9 @@ class User extends Authenticatable
         'email',
         'email_verified_at',
         'password',
-        'address',
-        'city',
-        'country',
+        'mobile',
+        'last_login_ip',
+        'last_login_time',
         'remember_token',
     ];
 
@@ -50,21 +50,24 @@ class User extends Authenticatable
     /**
      * Get the addresses for the user.
      */
-    public function addresses() {
+    public function addresses()
+    {
         return $this->hasMany(Address::class);
     }
 
     /**
      * Get the shop associated with the user.
      */
-    public function shop() {
+    public function shop()
+    {
         return $this->hasOne(Shop::class);
     }
 
     /**
      * Get the orders for the user.
      */
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany(Orders::class);
     }
 }

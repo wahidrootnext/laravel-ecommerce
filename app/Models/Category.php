@@ -20,14 +20,14 @@ class Category extends Model
         'description',
         'parent_id',
         'featured',
-        'menu',
         'image',
     ];
 
     /**
      * The products that belong to the category.
      */
-    public function products() {
+    public function products()
+    {
         return $this->belongsToMany(Product::class)->withTimestamps();
     }
 }

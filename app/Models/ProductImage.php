@@ -17,12 +17,14 @@ class ProductImage extends Model
     protected $fillable = [
         'product_id',
         'full',
+        'thumbnail',
     ];
 
     /**
      * Get the product that owns the image.
      */
-    public function product() {
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 }

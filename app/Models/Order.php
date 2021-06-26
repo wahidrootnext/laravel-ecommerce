@@ -21,7 +21,7 @@ class Order extends Model
         'status',
         'grand_total',
         'item_count',
-        'is_paid',
+        'paid',
         'payment_method',
         'shipping_full_name',
         'shipping_address',

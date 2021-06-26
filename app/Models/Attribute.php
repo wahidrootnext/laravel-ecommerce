@@ -18,8 +18,8 @@ class Attribute extends Model
         'code',
         'name',
         'frontend_type',
-        'is_filterable',
-        'is_required',
+        'filterable',
+        'required',
     ];
 
     /**

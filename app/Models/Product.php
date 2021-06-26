@@ -16,10 +16,10 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'brand',
-        'sku',
         'name',
         'slug',
+        'sku',
+        'brand',
         'description',
         'quantity',
         'weight',
@@ -27,7 +27,7 @@ class Product extends Model
         'sale_price',
         'status',
         'featured',
-        'ratings',
+        'rating',
         'shop_id',
     ];
 
