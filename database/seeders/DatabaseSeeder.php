@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProductImage;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             ShopSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            ProductImage::class
+            ProductImageSeeder::class
         ]);
     }
 }
