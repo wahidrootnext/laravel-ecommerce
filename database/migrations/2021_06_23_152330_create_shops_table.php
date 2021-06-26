@@ -17,7 +17,7 @@ class CreateShopsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description')->nullable();
-            $table->decimal('ratings', 2, 1)->nullable();
+            $table->double('rating', 2, 1)->nullable();
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

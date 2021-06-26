@@ -15,18 +15,18 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('brand');
-            $table->string('sku');
             $table->string('name');
             $table->string('slug');
+            $table->string('sku');
+            $table->string('brand')->nullable();
             $table->text('description')->nullable();
             $table->integer('quantity');
-            $table->decimal('weight', 8, 2)->nullable();
-            $table->decimal('price', 8, 2);
-            $table->decimal('sale_price', 8, 2)->nullable();
-            $table->tinyInteger('status');
-            $table->tinyInteger('featured');
-            $table->integer('ratings')->nullable();
+            $table->double('weight', 8, 2)->nullable();
+            $table->double('price', 8, 2);
+            $table->double('sale_price', 8, 2)->nullable();
+            $table->boolean('status');
+            $table->boolean('featured');
+            $table->integer('rating')->nullable();
             $table->foreignId('shop_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

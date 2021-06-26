@@ -17,9 +17,9 @@ class CreateAttributesTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->enum('frontend_type', ['Simple Product', 'Virtual Product', 'Downloadable Product', 'Grouped Product', 'External/Affiliate Product', 'Variable Product']);
-            $table->tinyInteger('is_filterable');
-            $table->tinyInteger('is_required');
+            $table->enum('frontend_type', ['type_1', 'type_2']);
+            $table->boolean('filterable');
+            $table->boolean('required');
             $table->timestamps();
         });
     }

@@ -18,9 +18,9 @@ class CreateOrdersTable extends Migration
             $table->string('order_number');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status', ['Pending', 'Awaiting Payment', 'Awaiting Fulfillment', 'Awaiting Shipment', 'Awaiting Pickup', 'Partially Shipped', 'Completed', 'Shipped', 'Cancelled', 'Declined', 'Refunded', 'Disputed', 'Manual Verification Required', 'Partially Refunded']);
-            $table->decimal('grand_total', 20, 6);
+            $table->double('grand_total', 20, 2);
             $table->integer('item_count')->nullable();
-            $table->tinyInteger('is_paid')->nullable();
+            $table->boolean('paid')->nullable();
             $table->enum('payment_method', ['Credit/Debit Card', 'Bank Transfers', 'E-Wallet', 'Cash on Delivery', 'Mobile Banking'])->nullable();
             $table->string('shipping_full_name');
             $table->text('shipping_address');

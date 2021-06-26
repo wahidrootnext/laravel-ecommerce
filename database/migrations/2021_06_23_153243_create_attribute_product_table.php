@@ -17,7 +17,7 @@ class CreateAttributeProductTable extends Migration
             $table->foreignId('attribute_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('value');
             $table->integer('quantity');
-            $table->decimal('price', 8, 2)->nullable();
+            $table->double('price', 8, 2)->nullable();
             $table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->primary(['attribute_id', 'product_id']);
