@@ -18,5 +18,5 @@ mix.browserSync({
 
 mix.js('resources/js/App.js', 'public/js').vue()
     .postCss('resources/css/app.css', 'public/css', [
-        //
+        require("tailwindcss"),
     ]);
