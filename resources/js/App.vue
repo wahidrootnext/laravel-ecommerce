@@ -1,13 +1,18 @@
 <template>
-    <Navbar />
     <router-view></router-view>
+    <preloader v-if="loading"></preloader>
 </template>
 <script>
-    import Navbar from './Components/Navbar.vue';
+    import { mapGetters } from 'vuex';
+    import preloader from './components/Preloader.vue';
     export default {
-        name: "App",
         components: {
-            Navbar
+            preloader
+        },
+        computed: {
+            ...mapGetters('preloader', {
+                loading: 'getLoading'
+            })
         }
     }
 </script>
