@@ -44,7 +44,6 @@
 </template>
 <script>
     export default {
-        name: "Registration",
         data() {
             return {
                 form: {
@@ -57,9 +56,9 @@
                 }
             }
         },
-        methods: {
+        computed: {
             registration() {
-                console.log(this.form)
+                return this.$store.dispatch('registration', "ok");
             }
         }
     }

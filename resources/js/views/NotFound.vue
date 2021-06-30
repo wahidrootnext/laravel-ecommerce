@@ -1,8 +1,8 @@
 <template>
-    This is home
+    404 Not Found
 </template>
 <script>
     export default {
-        name: "Home",
+        
     }
 </script>

@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Home from '../pages/Home.vue';
-import Login from '../pages/Login.vue';
-import Registration from '../pages/Registration.vue';
-import Dashboard from '../pages/Dashboard.vue';
-import NotFound from '../pages/NotFound.vue';
+import Home from '../views/Home.vue';
+import Login from '../views/Login.vue';
+import Registration from '../views/Registration.vue';
+import Dashboard from '../views/Dashboard.vue';
+import NotFound from '../views/NotFound.vue';
 
-const Router = createRouter({
+export default createRouter({
     history: createWebHistory(),
     linkActiveClass: "active",
     routes: [
@@ -18,5 +18,3 @@ const Router = createRouter({
         { path: '/:pathMatch(.*)*', name: '404', component: NotFound },
     ]
 });
-
-export default Router;
