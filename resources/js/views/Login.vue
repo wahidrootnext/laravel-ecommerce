@@ -7,7 +7,7 @@
                         Login
                     </div>
                     <div class="card-body">
-                        <form @submit.prevent="login(form)">
+                        <form @submit.prevent="handleLogin">
                             <div class="mb-3">
                                 <label for="email" class="form-label fw-bold">Email</label>
                                 <input type="text" class="form-control" id="email" v-model="form.email">
@@ -27,20 +27,22 @@
     </div>
 </template>
 <script>
-    import { mapActions } from 'vuex';
     export default {
         data() {
             return {
                 form: {
-                    email: null,
-                    password: null,
+                    email: 'harber.mathew@example.net',
+                    password: 'password',
                 }
             }
         },
         methods: {
-            ...mapActions('auth', {
-                login: 'doLogin'
-            })
+            handleLogin() {
+                this.$store.dispatch("preloader/setLoading", true);
+                this.$store.dispatch("auth/login", this.form).then(() => {
+                    this.$store.dispatch("preloader/setLoading", false);
+                });
+            }
         }
     }
 </script>

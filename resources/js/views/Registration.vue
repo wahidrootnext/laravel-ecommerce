@@ -7,7 +7,7 @@
                         Registration
                     </div>
                     <div class="card-body">
-                        <form @submit.prevent="registration">
+                        <form @submit.prevent="handleRegistration">
                             <div class="mb-3">
                                 <label for="first_name" class="form-label fw-bold">First Name</label>
                                 <input type="text" class="form-control" id="first_name" v-model="form.first_name">
@@ -56,9 +56,12 @@
                 }
             }
         },
-        computed: {
-            registration() {
-                return this.$store.dispatch('registration', "ok");
+        methods: {
+            handleRegistration() {
+                this.$store.dispatch("preloader/setLoading", true);
+                this.$store.dispatch("auth/registration", this.form).then(() => {
+                    this.$store.dispatch("preloader/setLoading", false);
+                });
             }
         }
     }

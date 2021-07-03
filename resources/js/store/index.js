@@ -2,7 +2,7 @@ import { createStore } from "vuex";
 import auth from "./modules/auth";
 import preloader from "./modules/preloader";
 
-export default createStore({
+const store = createStore({
     modules: {
         preloader,
         auth
@@ -22,3 +22,5 @@ export default createStore({
         
     }
 });
+
+export default store;
